@@ -1,0 +1,18 @@
+# Core Data Science & Analysis
+numpy
+pandas
+scipy
+
+# Machine Learning
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+plotly
+streamlit
+
+# Configuration & Environment
+python-dotenv
+# Jupyter & Development
+ipykernel

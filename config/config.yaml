@@ -1,0 +1,11 @@
+project:
+  name: "colombia-higher-ed-assessment-analysis"
+  version: "0.1.0"
+  description: "Colombia Higher Education Assessment Analysis"
+  environment: "development"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+random_seed: 42

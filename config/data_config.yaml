@@ -1,0 +1,14 @@
+paths:
+  raw_data_dir: "data/raw"
+  interim_data_dir: "data/interim"
+  processed_data_dir: "data/processed"
+
+raw_dataset:
+  filename: "saber_pro_raw.csv"
+  encoding: "utf-8"
+  separator: ","
+
+processing:
+  missing_values_strategy: "impute"
+  test_size: 0.2
+  stratify: true
