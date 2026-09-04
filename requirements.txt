@@ -5,6 +5,7 @@ scipy
 
 # Machine Learning
 scikit-learn
+joblib
 
 # Visualization
 matplotlib

@@ -80,3 +80,60 @@ Copy `.env.example` to `.env` and fill in necessary configuration parameters:
 ```bash
 cp .env.example .env
 ```
+
+## Dashboard de resiliencia académica
+
+La aplicación permite explorar los perfiles de estudiantes con bajo INSE, comparar
+la concentración de resiliencia, revisar K-Means y DBSCAN, y aplicar filtros
+territoriales, institucionales y académicos.
+
+### 1. Generar datos y modelos
+
+Después de ejecutar la preparación de datos, el pipeline completo se puede lanzar
+desde `4.0-modeling.ipynb` o desde la terminal:
+
+```bash
+python -m src.models.train_model
+```
+
+Este comando genera localmente:
+
+```text
+data/processed/saber_pro_2024_clusters_estudiantes.csv
+models/saber_pro_clustering_bundle.joblib
+models/model_summary.json
+```
+
+### 2. Iniciar Streamlit
+
+Desde la raíz del repositorio:
+
+```bash
+streamlit run src/dashboard/app.py
+```
+
+El dashboard se abrirá normalmente en `http://localhost:8501`.
+
+DBSCAN se utiliza únicamente para análisis descriptivo porque no dispone de una
+operación `predict` para observaciones nuevas.
+
+### Código reutilizable
+
+```text
+src/
+├── data/                 # Carga de datos y rutas
+├── features/             # Preparación reproducible de variables
+├── models/               # Entrenamiento, evaluación y predicción
+├── visualization/        # Gráficas Plotly reutilizables
+└── dashboard/
+    ├── app.py            # Entrada de Streamlit
+    ├── data.py           # Caché y filtros
+    ├── ui.py             # Estilos y componentes comunes
+    └── views/            # Vistas internas del dashboard
+```
+
+### Pruebas
+
+```bash
+python -m unittest discover -v
+```
