@@ -150,6 +150,17 @@ streamlit run src/dashboard/app.py
 
 Abra la dirección indicada por Streamlit, normalmente `http://localhost:8501`. La aplicación incluye filtros por perfil, departamento, metodología, origen institucional y núcleo académico, además de vistas de resumen, perfiles, resiliencia, DBSCAN y metodología.
 
+### 6. Exportar figuras para informes
+
+Después del modelado, genere las figuras PNG estáticas usadas en informes y presentaciones:
+
+```bash
+python -m src.visualization.export_figures
+```
+
+Las imágenes se guardan en `reports/figures/`. Consulte el
+[`README` de figuras](reports/figures/README.md) para conocer el propósito de cada una.
+
 ## Pruebas
 
 Para verificar el pipeline de predicción, la reproducibilidad de K-Means y el arranque de las vistas del dashboard:

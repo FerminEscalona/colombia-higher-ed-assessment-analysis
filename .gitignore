@@ -61,6 +61,8 @@ data/processed/*
 models/*
 !models/.gitkeep
 
-# Reports / Figures generated outputs (preserve .gitkeep)
+# Figures used in reports are versioned so they can be reused in written deliverables.
 reports/figures/*
 !reports/figures/.gitkeep
+!reports/figures/*.png
+!reports/figures/*.md
